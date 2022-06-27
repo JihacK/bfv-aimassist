@@ -1,23 +1,39 @@
+from tkinter import N
 from lib import aimer
 from lib import helpers
 from lib import keycodes
 from lib.bones import bones
+import time
 import ctypes
 
+print("JihacK's BFV Aim Helper")
+print()
+print("After you finish playing, close this window.")
+print()
+print("To use AIM just press/hold Mouse5 key")
+print("Remember to change VOIP default ALT key to CAPSLOCK or other key.")
+print()
+print("You can change the aim target with the END key")
+print("Head -> Spine -> Neck -> Hips")
+print()
+
+time.sleep(45)
+print()
 #### CHANGE OPTIONS HERE ####
 
 # Field of View
 # Alter this between 0.1 and 3.0 for best results. 0.1 is very narrow, while larger numbers allow
 # for more soldiers to be targeted
-fov = 2.0
+fov = 0.5
 
 # Distance Limit
 # Example, set to 100 to limit locking onto soldiers further than 100 meters away.
-distance_limit = None
+#distance_limit = None
+distance_limit = 100
 
 # Trigger Button
 # Grab your preferred button from lib/keycodes.py
-trigger = keycodes.LALT
+trigger = keycodes.LBUTTON
 
 
 # Aim Location Options
@@ -51,7 +67,7 @@ if distance_limit is not None and distance_limit <= 0:
 
 if __name__ == "__main__":
     print("xx4 aim assist Version %s" % version)
-    print("Thanks to Tormund and jo2305")
+    print("Thanks to Tormund, jo2305 and Crald")
 
     if not helpers.is_admin():
         print("- Error: This must be run with admin privileges")
@@ -72,4 +88,3 @@ if __name__ == "__main__":
     print ("Using screensize: %s x %s" % screensize)
     aimer = aimer.Aimer(screensize, trigger, distance_limit, fov, aim_locations, aim_switch)
     aimer.start()
-
