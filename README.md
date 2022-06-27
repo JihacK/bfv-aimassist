@@ -1,13 +1,13 @@
 # Battlefield V Aim Assist
 
-`pip install -r requirements.txt`
+To start run `start.bat` as Administrator
 
-To start: `python assist.py` as Administrator
-
-Check options in the `assist.py` file:
+Check options in the `peler.py` file:
 * Field of View
 * Distance Limit
 * Trigger (Aim) Button
 * Aim Locations
 * Aim Location Switching Button
 * Screensize (should be ok with default)
+
+thanks to xx4 for base source
